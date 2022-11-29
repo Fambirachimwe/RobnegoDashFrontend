@@ -13,14 +13,10 @@ import AuthLayout from "layouts/Auth.js";
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import Login from "views/examples/Login";
 import Register from "views/examples/Register";
-
-// import { StrictMode } from 'react';
 import { render } from 'react-dom';
 
-// import App from './App';
 
-
-
+const queryClient = new QueryClient();
 const root = document.getElementById('root');
 render(
   <StrictMode>
