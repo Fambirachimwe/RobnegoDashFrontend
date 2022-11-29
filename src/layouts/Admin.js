@@ -26,7 +26,11 @@ import Sidebar from "components/Sidebar/Sidebar.js";
 
 import routes from "routes.js";
 
-// 
+
+
+
+// the final shit 
+
 
 const Admin = (props) => {
   const mainContent = React.useRef(null);
