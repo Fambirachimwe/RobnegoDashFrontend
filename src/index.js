@@ -14,40 +14,41 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import Login from "views/examples/Login";
 import Register from "views/examples/Register";
 
+// import { StrictMode } from 'react';
+import { render } from 'react-dom';
+
+// import App from './App';
 
 
 
-import { createRoot } from 'react-dom/client';
-const queryClient = new QueryClient()
-const container = document.getElementById('root');
-
-// 
-
-const root = createRoot(container); // createRoot(container!) if you use TypeScript
-root.render(
-  <QueryClientProvider client={queryClient}>
-    <BrowserRouter>
-      <Switch>
+const root = document.getElementById('root');
+render(
+  <StrictMode>
+    <QueryClientProvider client={queryClient}>
+      <BrowserRouter>
+        <Switch>
 
 
 
-        <Route path="/admin" render={(props) => <AdminLayout {...props} />} />
-        <Route path="/auth" render={(props) => <AuthLayout {...props} />} />
+          <Route path="/admin" render={(props) => <AdminLayout {...props} />} />
+          <Route path="/auth" render={(props) => <AuthLayout {...props} />} />
 
-        <Route exact path="/login" render={(props) => <Login {...props} />} />
-        <Route exact path="/register" render={() => <Register />} />
+          <Route exact path="/login" render={(props) => <Login {...props} />} />
+          <Route exact path="/register" render={() => <Register />} />
 
-        <Redirect from="/" to="/admin/index" />
+          <Redirect from="/" to="/admin/index" />
 
 
 
 
 
 
-      </Switch>
-    </BrowserRouter>
+        </Switch>
+      </BrowserRouter>
 
-  </QueryClientProvider>
+    </QueryClientProvider>
+  </StrictMode>,
+  root
 );
 
 
@@ -56,28 +57,6 @@ root.render(
 
 
 
-root.render(
-  <QueryClientProvider client={queryClient}>
-    <BrowserRouter>
-      <Switch>
 
 
 
-        <Route path="/admin" render={(props) => <AdminLayout {...props} />} />
-        <Route path="/auth" render={(props) => <AuthLayout {...props} />} />
-
-        <Route exact path="/login" render={(props) => <Login {...props} />} />
-        <Route exact path="/register" render={() => <Register />} />
-
-        <Redirect from="/" to="/admin/index" />
-
-
-
-
-
-
-      </Switch>
-    </BrowserRouter>
-
-  </QueryClientProvider>
-);
