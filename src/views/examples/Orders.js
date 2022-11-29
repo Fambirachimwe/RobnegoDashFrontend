@@ -17,7 +17,7 @@
 */
 import { useState } from "react";
 // react component that copies the given text inside your clipboard
-import { CopyToClipboard } from "react-copy-to-clipboard";
+// import { CopyToClipboard } from "react-copy-to-clipboard";
 // reactstrap components
 import {
   Card,

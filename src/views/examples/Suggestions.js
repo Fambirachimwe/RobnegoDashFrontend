@@ -22,17 +22,17 @@ import { CopyToClipboard } from "react-copy-to-clipboard";
 import {
     Card,
     CardHeader,
-    CardBody,
+    // CardBody,
     Container,
     Row,
     Col,
-    UncontrolledTooltip,
+    // UncontrolledTooltip,
     Table,
     CardFooter,
     Pagination,
     PaginationItem,
     PaginationLink,
-    Badge
+    // Badge
 } from "reactstrap";
 // core components
 import Header from "components/Headers/Header.js";
