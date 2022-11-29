@@ -1,22 +1,6 @@
-/*!
 
-=========================================================
-* Argon Dashboard React - v1.2.2
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/argon-dashboard-react
-* Copyright 2022 Creative Tim (https://www.creative-tim.com)
-* Licensed under MIT (https://github.com/creativetimofficial/argon-dashboard-react/blob/master/LICENSE.md)
-
-* Coded by Creative Tim
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-*/
 import React from "react";
-import ReactDOM from "react-dom";
+// import ReactDOM from "react-dom";
 import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
 
 import "assets/plugins/nucleo/css/nucleo.css";
@@ -32,9 +16,41 @@ import Register from "views/examples/Register";
 
 
 
-const root = ReactDOM.createRoot(document.getElementById("root"));
 
+import { createRoot } from 'react-dom/client';
 const queryClient = new QueryClient()
+const container = document.getElementById('root');
+
+const root = createRoot(container); // createRoot(container!) if you use TypeScript
+root.render(
+  <QueryClientProvider client={queryClient}>
+    <BrowserRouter>
+      <Switch>
+
+
+
+        <Route path="/admin" render={(props) => <AdminLayout {...props} />} />
+        <Route path="/auth" render={(props) => <AuthLayout {...props} />} />
+
+        <Route exact path="/login" render={(props) => <Login {...props} />} />
+        <Route exact path="/register" render={() => <Register />} />
+
+        <Redirect from="/" to="/admin/index" />
+
+
+
+
+
+
+      </Switch>
+    </BrowserRouter>
+
+  </QueryClientProvider>
+);
+
+
+
+
 
 
 
