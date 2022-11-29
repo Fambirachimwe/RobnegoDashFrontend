@@ -16,7 +16,7 @@
 
 */
 import React from "react";
-import ReactDOM from "react-dom/client";
+import ReactDOM from "react-dom";
 import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
 
 import "assets/plugins/nucleo/css/nucleo.css";
@@ -35,6 +35,8 @@ import Register from "views/examples/Register";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 const queryClient = new QueryClient()
+
+
 
 root.render(
   <QueryClientProvider client={queryClient}>
