@@ -17,51 +17,33 @@
 */
 import { useState } from "react";
 // node.js library that concatenates classes (strings)
-import classnames from "classnames";
+// import classnames from "classnames";
 // javascipt plugin for creating charts
-import Chart from "chart.js";
+// import Chart from "chart.js";
 // react plugin used to create charts
-import { Line, Bar } from "react-chartjs-2";
+// import { Line, Bar } from "react-chartjs-2";
 // reactstrap components
 import {
-  Button,
-
-  CardBody,
-  NavItem,
-  NavLink,
-  Nav,
-
 
   Col,
   Badge,
   Card,
   CardHeader,
   CardFooter,
-  DropdownMenu,
-  DropdownItem,
-  UncontrolledDropdown,
-  DropdownToggle,
-  Media,
+
   Pagination,
   PaginationItem,
   PaginationLink,
-  Progress,
+
   Table,
   Container,
   Row,
-  UncontrolledTooltip
+
 } from "reactstrap";
 
-// core components
-import {
-  chartOptions,
-  parseOptions,
-  chartExample1,
-  chartExample2
-} from "variables/charts.js";
-
+// core component
 import Header from "components/Headers/Header.js";
-import Tables from "./examples/Tables";
+// import Tables from "./examples/Tables";
 import { useQuery } from "@tanstack/react-query";
 import { getReservations } from "api";
 import { useHistory } from "react-router";
@@ -72,21 +54,11 @@ import { useHistory } from "react-router";
 
 
 const Index = (props) => {
-  const [activeNav, setActiveNav] = useState(1);
-  const [chartExample1Data, setChartExample1Data] = useState("data1");
+
   const history = useHistory();
 
 
 
-  if (window.Chart) {
-    parseOptions(Chart, chartOptions());
-  }
-
-  const toggleNavs = (e, index) => {
-    e.preventDefault();
-    setActiveNav(index);
-    setChartExample1Data("data" + index);
-  };
 
   const reservations = useQuery({ queryKey: ['reservations'], queryFn: getReservations });
 

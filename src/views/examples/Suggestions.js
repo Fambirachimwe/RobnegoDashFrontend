@@ -17,7 +17,7 @@
 */
 import { useState } from "react";
 // react component that copies the given text inside your clipboard
-import { CopyToClipboard } from "react-copy-to-clipboard";
+// import { CopyToClipboard } from "react-copy-to-clipboard";
 // reactstrap components
 import {
     Card,
@@ -40,11 +40,11 @@ import { useQuery } from "@tanstack/react-query";
 import { getFoodSuggestions } from "api";
 
 const Suggestions = () => {
-    const [copiedText, setCopiedText] = useState();
+    // const [copiedText, setCopiedText] = useState();
 
     const suggestions = useQuery({ queryKey: ['suggestions'], queryFn: getFoodSuggestions });
 
-    console.log(suggestions.data)
+    // console.log(suggestions.data)
 
 
 
