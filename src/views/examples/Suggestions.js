@@ -15,24 +15,21 @@
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 */
-import { useState } from "react";
+
 // react component that copies the given text inside your clipboard
 // import { CopyToClipboard } from "react-copy-to-clipboard";
 // reactstrap components
 import {
     Card,
     CardHeader,
-    // CardBody,
     Container,
     Row,
     Col,
-    // UncontrolledTooltip,
     Table,
     CardFooter,
     Pagination,
     PaginationItem,
     PaginationLink,
-    // Badge
 } from "reactstrap";
 // core components
 import Header from "components/Headers/Header.js";

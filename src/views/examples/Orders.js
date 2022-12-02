@@ -15,18 +15,16 @@
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 */
-import { useState } from "react";
+
 // react component that copies the given text inside your clipboard
 // import { CopyToClipboard } from "react-copy-to-clipboard";
 // reactstrap components
 import {
   Card,
   CardHeader,
-  CardBody,
   Container,
   Row,
   Col,
-  UncontrolledTooltip,
   Table,
   CardFooter,
   Pagination,
@@ -42,7 +40,6 @@ import { getOrders } from "api.js";
 import Truncate from 'react-truncate';
 
 const Icons = () => {
-  const [copiedText, setCopiedText] = useState();
 
   const orders = useQuery({ queryKey: ['orders'], queryFn: getOrders });
 
@@ -61,11 +58,6 @@ const Icons = () => {
               <Table className="align-items-center table-flush" responsive>
                 <thead className="thead-light">
 
-                  {/* completed: false
-date: "2022-11-22T11:02:36.941Z"
-order: "Hi, I'd like to place an order"
-
-_id: "637caccedfde417655923cae" */}
                   <tr>
                     <th scope="col">Date</th>
                     <th scope="col">ID</th>
@@ -99,7 +91,7 @@ _id: "637caccedfde417655923cae" */}
                                 }}
                               >
 
-                                <Truncate lines={2} ellipsis={<span>... <a href='/link/to/article'>View</a></span>}>
+                                <Truncate lines={2} ellipsis={<span>... <a href={`/orders/${res._id}`}>View</a></span>}>
                                   {res.order}
                                 </Truncate>
 

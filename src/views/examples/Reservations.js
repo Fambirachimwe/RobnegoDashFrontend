@@ -15,18 +15,17 @@
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 */
-import { useState } from "react";
 // react component that copies the given text inside your clipboard
-import { CopyToClipboard } from "react-copy-to-clipboard";
+// import { CopyToClipboard } from "react-copy-to-clipboard";
 // reactstrap components
 import {
     Card,
     CardHeader,
-    CardBody,
+    // CardBody,
     Container,
     Row,
     Col,
-    UncontrolledTooltip,
+    // UncontrolledTooltip,
     Table,
     CardFooter,
     Pagination,
@@ -39,11 +38,11 @@ import Header from "components/Headers/Header.js";
 import { useQuery } from "@tanstack/react-query";
 
 
-import Truncate from 'react-truncate';
+// import Truncate from 'react-truncate';
 import { getReservations } from "api.js";
 
 const Icons = () => {
-    const [copiedText, setCopiedText] = useState();
+
 
     const reservations = useQuery({ queryKey: ['reservations'], queryFn: getReservations });
 

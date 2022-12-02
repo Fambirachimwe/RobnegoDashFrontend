@@ -15,7 +15,7 @@
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 */
-import { useState } from "react";
+
 // node.js library that concatenates classes (strings)
 // import classnames from "classnames";
 // javascipt plugin for creating charts
@@ -56,17 +56,12 @@ import { useHistory } from "react-router";
 const Index = (props) => {
 
   const history = useHistory();
-
-
-
-
   const reservations = useQuery({ queryKey: ['reservations'], queryFn: getReservations });
 
   if (!localStorage.getItem('token')) {
 
     history.push('/login')
   }
-
 
 
   return (
